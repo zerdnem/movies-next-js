@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/api"
+  to = "https://yts.torrentbay.to/api/v2"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
