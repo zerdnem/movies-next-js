@@ -28,14 +28,16 @@ export default function Home(props) {
   const [page, setPage] = useState(2);
 
   const getMoreMovies = async () => {
-    const res = await fetch(`/api/hello?page=${page}`);
+    const res = await fetch(`${BASE_URL}api/v2/list_movies.json?page=${page}`);
     const newMovies = await res.json();
     setMovies((movie) => [...movie, ...newMovies.data.movies.filter((e) => e)]);
     setPage((page += 1));
   };
 
   const submitForm = async (query) => {
-    const res = await fetch(`/api/search?query=${query}`);
+    const res = await fetch(
+      `${BASE_URL}api/v2/list_movies.json?query_term=${query}`
+    );
     const { data } = await res.json();
     setMovies(data.movies);
     setHasMore(false);
