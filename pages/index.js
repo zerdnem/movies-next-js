@@ -11,7 +11,7 @@ import Header from "../components/Header";
 
 const BASE_URL = "https://yts.torrentbay.to/";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${BASE_URL}api/v2/list_movies.json`);
   const json = await res.json();
   const movies = json.data.movies;
