@@ -26,6 +26,7 @@ export default function Movie({ movie }) {
     window.webtor = window.webtor || [];
     window.webtor.push({
       id: "player",
+      width: '100%',
       magnet: `magnet:?xt=urn:btih:${magnet}`,
     });
   }
@@ -51,6 +52,7 @@ export default function Movie({ movie }) {
             alt="poster"
             layout="fill"
             objectFit="cover"
+            priority={true}
           />
         </div>
         <div className="absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">
